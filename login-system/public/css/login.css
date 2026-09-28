@@ -1,0 +1,919 @@
+/*=========================================
+        KVONAUTH LOGIN PAGE
+=========================================*/
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*=========================
+        RESET
+=========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+:root{
+
+    --bg:#08111F;
+    --card:rgba(255,255,255,.07);
+    --border:rgba(255,255,255,.10);
+
+    --primary:#2563EB;
+    --secondary:#38BDF8;
+
+    --white:#ffffff;
+    --text:#CBD5E1;
+
+}
+
+body{
+    min-height:100vh;
+    background:var(--bg);
+    color:white;
+    position:relative;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+/*=========================
+      BACKGROUND
+=========================*/
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+}
+
+.blur{
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.35;
+
+}
+
+.blur1{
+
+    background:#2563EB;
+
+    top:-120px;
+
+    left:-120px;
+
+}
+
+.blur2{
+
+    background:#06B6D4;
+
+    bottom:-120px;
+
+    right:-120px;
+
+}
+
+/*=========================
+      CURSOR GLOW
+=========================*/
+
+.cursor-glow{
+
+    position:fixed;
+
+    width:280px;
+
+    height:280px;
+
+    border-radius:50%;
+
+    background:rgba(37,99,235,.16);
+
+    filter:blur(60px);
+
+    transform:translate(-50%,-50%);
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+/*=========================
+      MAIN WRAPPER
+=========================*/
+
+.wrapper{
+
+    width:100%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    min-height:100vh;
+
+    display:grid;
+
+    grid-template-columns:1fr 470px;
+
+    gap:70px;
+
+    align-items:center;
+
+    padding:40px;
+
+}
+
+/*=========================
+      LEFT PANEL
+=========================*/
+
+.left-panel{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:35px;
+
+}
+
+.brand i{
+
+    font-size:60px;
+
+    color:#38BDF8;
+
+}
+
+.brand h1{
+
+    font-size:48px;
+
+    font-weight:700;
+
+}
+
+.left-panel h2{
+
+    font-size:46px;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+}
+
+.left-panel p{
+
+    max-width:520px;
+
+    color:var(--text);
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+
+}
+
+/*=========================
+      FEATURES
+=========================*/
+
+.features{
+
+    display:grid;
+
+    gap:18px;
+
+}
+
+.feature{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    padding:18px 22px;
+
+    width:360px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    transition:.35s;
+
+}
+
+.feature:hover{
+
+    transform:translateX(10px);
+
+    border-color:#38BDF8;
+
+}
+
+.feature i{
+
+    color:#38BDF8;
+
+    font-size:22px;
+
+}
+
+.feature span{
+
+    font-size:16px;
+
+}
+/*=========================================
+        RIGHT PANEL
+=========================================*/
+
+.right-panel{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/*=========================================
+        LOGIN CARD
+=========================================*/
+
+.login-card{
+
+    width:100%;
+    max-width:460px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    border-radius:28px;
+
+    padding:45px 35px;
+
+    position:relative;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35);
+margin:30px auto;
+}
+
+.login-card h2{
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+.login-card p{
+
+    color:var(--text);
+
+    margin-bottom:30px;
+
+}
+
+/*=========================================
+        INPUT BOX
+=========================================*/
+
+.input-box{
+
+    margin-bottom:22px;
+
+}
+
+.input-box label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-size:14px;
+
+    color:#E2E8F0;
+
+}
+
+.input{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:0 18px;
+
+    height:58px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    border-radius:14px;
+
+    transition:.3s;
+
+}
+
+.input:hover{
+
+    border-color:#38BDF8;
+
+}
+
+.input:focus-within{
+
+    border-color:#2563EB;
+
+    box-shadow:0 0 15px rgba(37,99,235,.25);
+
+}
+
+.input i{
+
+    color:#94A3B8;
+
+}
+
+.input input{
+
+    flex:1;
+
+    height:100%;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+.input input::placeholder{
+
+    color:#94A3B8;
+
+}
+
+.toggle-password{
+
+    cursor:pointer;
+
+}
+
+/*=========================================
+        OPTIONS
+=========================================*/
+
+.options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    font-size:14px;
+
+}
+
+.options label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#CBD5E1;
+
+}
+
+.options a{
+
+    color:#38BDF8;
+
+    text-decoration:none;
+
+}
+
+.options a:hover{
+
+    text-decoration:underline;
+
+}
+
+/*=========================================
+        LOGIN BUTTON
+=========================================*/
+
+.login-btn{
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#2563EB,#38BDF8);
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.login-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 30px rgba(37,99,235,.35);
+
+}
+
+/*=========================================
+        DIVIDER
+=========================================*/
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    margin:28px 0;
+
+}
+
+.divider::before,
+.divider::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:rgba(255,255,255,.10);
+
+}
+
+.divider span{
+
+    margin:0 15px;
+
+    color:#94A3B8;
+
+}
+
+/*=========================================
+        GOOGLE BUTTON
+=========================================*/
+
+.google-btn{
+
+    width:100%;
+
+    height:55px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,.10);
+
+    background:rgba(255,255,255,.05);
+
+    color:white;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.google-btn:hover{
+
+    border-color:#38BDF8;
+
+    transform:translateY(-2px);
+
+}
+
+/*=========================================
+        SIGNUP LINK
+=========================================*/
+
+.signup-link{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    color:#CBD5E1;
+
+}
+
+.signup-link a{
+
+    color:#38BDF8;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.signup-link a:hover{
+
+    text-decoration:underline;
+
+}
+/*=========================================
+        PREMIUM ANIMATIONS
+=========================================*/
+
+/* Page Fade */
+
+body{
+    animation:pageFade .7s ease;
+}
+
+@keyframes pageFade{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+/* Card Animation */
+
+.login-card{
+
+    animation:cardFade .8s ease;
+}
+
+@keyframes cardFade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Floating Logo */
+
+.brand i{
+
+    animation:floatLogo 4s ease-in-out infinite;
+
+}
+
+@keyframes floatLogo{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/*=========================================
+        GLASS BORDER
+=========================================*/
+
+.login-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:28px;
+
+    padding:1px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.15),
+        transparent,
+        rgba(56,189,248,.18)
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    pointer-events:none;
+
+}
+
+/*=========================================
+        BUTTON SHINE
+=========================================*/
+
+.login-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.login-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.25);
+
+    transform:skewX(-25deg);
+
+    transition:.6s;
+
+}
+
+.login-btn:hover::before{
+
+    left:140%;
+
+}
+
+/*=========================================
+        HOVER EFFECTS
+=========================================*/
+
+.login-card:hover{
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.45),
+        0 0 30px rgba(56,189,248,.10);
+
+}
+
+.feature:hover{
+
+    background:rgba(255,255,255,.08);
+
+    transform:
+        translateX(10px)
+        scale(1.02);
+
+}
+
+.input:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.google-btn:hover{
+
+    background:rgba(255,255,255,.08);
+
+}
+
+/*=========================================
+        SCROLLBAR
+=========================================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563EB;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#09111F;
+
+}
+
+/*=========================================
+        SELECTION
+=========================================*/
+
+::selection{
+
+    background:#2563EB;
+
+    color:white;
+
+}
+
+/*=========================================
+        RESPONSIVE
+=========================================*/
+
+@media(max-width:992px){
+
+    body{
+
+        overflow:auto;
+
+    }
+
+    .wrapper{
+
+        grid-template-columns:1fr;
+
+        padding:30px 20px;
+
+        gap:40px;
+
+    }
+
+    .left-panel{
+
+        display:none;
+
+    }
+
+    .right-panel{
+
+        width:100%;
+
+    }
+
+    .login-card{
+
+        max-width:460px;
+
+        width:100%;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .wrapper{
+
+        padding:20px;
+
+    }
+
+    .login-card{
+
+        padding:28px;
+
+        border-radius:24px;
+
+    }
+
+    .login-card h2{
+
+        font-size:28px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .wrapper{
+
+        padding:15px;
+
+    }
+
+    .login-card{
+
+        padding:22px;
+
+        border-radius:20px;
+
+    }
+
+    .login-card h2{
+
+        font-size:24px;
+
+    }
+
+    .input{
+
+        height:52px;
+
+    }
+
+    .login-btn,
+    .google-btn{
+
+        height:50px;
+
+    }
+
+}

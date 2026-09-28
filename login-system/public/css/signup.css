@@ -1,0 +1,1211 @@
+/*==================================================
+    KVONAUTH SIGNUP CSS
+    PART 1 - RESET + BACKGROUND + LAYOUT
+==================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*=========================
+    RESET
+=========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    background:#09111F;
+    color:#fff;
+}
+
+/*=========================
+    VARIABLES
+=========================*/
+
+:root{
+
+    --primary:#4F46E5;
+
+    --secondary:#2563EB;
+
+    --accent:#38BDF8;
+
+    --card:#111C2D;
+
+    --glass:rgba(255,255,255,.05);
+
+    --border:rgba(255,255,255,.08);
+
+    --text:#FFFFFF;
+
+    --light:#B7C2D2;
+
+}
+
+/*=========================
+    BACKGROUND
+=========================*/
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-2;
+
+}
+
+.blur{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(140px);
+
+}
+
+.blur1{
+
+    width:430px;
+
+    height:430px;
+
+    background:#4F46E5;
+
+    top:-120px;
+
+    left:-120px;
+
+    animation:moveOne 12s infinite alternate ease-in-out;
+
+}
+
+.blur2{
+
+    width:520px;
+
+    height:520px;
+
+    background:#2563EB;
+
+    bottom:-180px;
+
+    right:-150px;
+
+    animation:moveTwo 14s infinite alternate ease-in-out;
+
+}
+
+@keyframes moveOne{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(120px,80px);
+
+    }
+
+}
+
+@keyframes moveTwo{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(-120px,-70px);
+
+    }
+
+}
+
+/*=========================
+    CURSOR GLOW
+=========================*/
+
+.cursor-glow{
+
+    position:fixed;
+
+    width:280px;
+
+    height:280px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(56,189,248,.22),
+    transparent 70%);
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    z-index:-1;
+
+}
+
+/*=========================
+    WRAPPER
+=========================*/
+
+.wrapper{
+
+    width:100%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    min-height:100vh;
+
+    display:grid;
+
+    grid-template-columns:1fr 480px;
+
+    gap:70px;
+
+    align-items:center;
+
+    padding:40px;
+
+}
+
+/*=========================
+    LEFT PANEL
+=========================*/
+
+.left-panel{
+
+    color:white;
+
+}
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:35px;
+
+}
+
+.brand i{
+
+    font-size:55px;
+
+    color:var(--accent);
+
+}
+
+.brand h1{
+
+    font-size:48px;
+
+    font-weight:700;
+
+}
+
+.left-panel h2{
+
+    font-size:44px;
+
+    line-height:1.2;
+
+    margin-bottom:18px;
+
+}
+
+.left-panel p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:var(--light);
+
+    max-width:560px;
+
+    margin-bottom:40px;
+
+}
+
+/*=========================
+    FEATURES
+=========================*/
+
+.features{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+.feature{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(15px);
+
+    transition:.35s;
+
+}
+
+.feature i{
+
+    color:#22C55E;
+
+    font-size:22px;
+
+}
+
+.feature:hover{
+
+    transform:translateY(-6px);
+
+    background:rgba(255,255,255,.08);
+
+    border-color:var(--accent);
+
+}
+/*==================================================
+    PART 2 - SIGNUP CARD + FORM
+==================================================*/
+
+/*=========================
+    RIGHT PANEL
+=========================*/
+
+.right-panel{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/*=========================
+    SIGNUP CARD
+=========================*/
+
+.signup-card{
+
+    width:100%;
+
+    max-width:430px;
+
+    padding:35px;
+
+    border-radius:28px;
+
+    background:rgba(17,28,45,.75);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+    transition:.35s;
+
+}
+
+.signup-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.signup-card h2{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.signup-card>p{
+
+    color:var(--light);
+
+    margin-bottom:28px;
+
+}
+
+/*=========================
+    INPUT BOX
+=========================*/
+
+.input-box{
+
+    margin-bottom:18px;
+
+}
+
+.input-box label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    color:#D6DCE5;
+
+}
+
+/*=========================
+    INPUT
+=========================*/
+
+.input{
+
+    display:flex;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:14px;
+
+    padding:14px 16px;
+
+    transition:.3s;
+
+}
+
+.input:hover{
+
+    border-color:var(--accent);
+
+}
+
+.input:focus-within{
+
+    border-color:var(--accent);
+
+    box-shadow:0 0 18px rgba(56,189,248,.25);
+
+}
+
+.input i{
+
+    color:#90A4BC;
+
+    font-size:18px;
+
+}
+
+.input input{
+
+    flex:1;
+
+    margin-left:12px;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+.input input::placeholder{
+
+    color:#7E8EA6;
+
+}
+
+.toggle-password{
+
+    cursor:pointer;
+
+}
+
+/*=========================
+    PASSWORD STRENGTH
+=========================*/
+
+.strength{
+
+    margin-top:5px;
+
+    margin-bottom:24px;
+
+}
+
+.strength-bar{
+
+    width:100%;
+
+    height:8px;
+
+    border-radius:30px;
+
+    background:#2E3B52;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.strength-bar::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:25%;
+
+    height:100%;
+
+    background:#EF4444;
+
+    border-radius:30px;
+
+    transition:.4s;
+
+}
+
+.strength span{
+
+    display:block;
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#B8C5D6;
+
+}
+
+/*=========================
+    SIGNUP BUTTON
+=========================*/
+
+.signup-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.signup-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(37,99,235,.45);
+
+}
+
+/*=========================
+    DIVIDER
+=========================*/
+
+.divider{
+
+    position:relative;
+
+    margin:28px 0;
+
+    text-align:center;
+
+    color:#8FA1B8;
+
+}
+
+.divider::before,
+
+.divider::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+
+    width:40%;
+
+    height:1px;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.divider::before{
+
+    left:0;
+
+}
+
+.divider::after{
+
+    right:0;
+
+}
+
+/*=========================
+    GOOGLE BUTTON
+=========================*/
+
+.google-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.05);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.google-btn:hover{
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.google-btn i{
+
+    margin-right:10px;
+
+}
+
+/*=========================
+    LOGIN LINK
+=========================*/
+
+.login-link{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    color:#B7C2D2;
+
+}
+
+.login-link a{
+
+    color:var(--accent);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.login-link a:hover{
+
+    text-decoration:underline;
+
+}
+/*==================================================
+    PART 3 - PREMIUM ANIMATIONS & EFFECTS
+==================================================*/
+
+/*=========================
+    CARD ENTRY ANIMATION
+=========================*/
+
+.signup-card{
+
+    position:relative;
+
+    animation:cardFade .8s ease;
+
+}
+
+@keyframes cardFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(45px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*=========================
+    GLASS BORDER
+=========================*/
+
+.signup-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:28px;
+
+    padding:1px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.15),
+        transparent,
+        rgba(56,189,248,.18)
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    pointer-events:none;
+
+}
+
+/*=========================
+    FLOATING LOGO
+=========================*/
+
+.brand i{
+
+    animation:floatLogo 4s ease-in-out infinite;
+
+}
+
+@keyframes floatLogo{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*=========================
+    FEATURE CARD
+=========================*/
+
+.feature:hover{
+
+    transform:
+    translateY(-8px)
+    scale(1.03);
+
+    background:rgba(255,255,255,.08);
+
+}
+
+/*=========================
+    INPUT HOVER
+=========================*/
+
+.input:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/*=========================
+    BUTTON SHINE
+=========================*/
+
+.signup-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.signup-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.25);
+
+    transform:skewX(-25deg);
+
+    transition:.6s;
+
+}
+
+.signup-btn:hover::before{
+
+    left:140%;
+
+}
+
+/*=========================
+    GOOGLE BUTTON
+=========================*/
+
+.google-btn:hover{
+
+    transform:translateY(-2px);
+
+    border-color:var(--accent);
+
+}
+
+/*=========================
+    PASSWORD BAR
+=========================*/
+
+.strength-bar{
+
+    box-shadow:
+
+        0 0 10px rgba(56,189,248,.15);
+
+}
+
+/*=========================
+    PASSWORD BAR ANIMATION
+=========================*/
+
+.strength-bar::before{
+
+    animation:strengthGlow 2s infinite alternate;
+
+}
+
+@keyframes strengthGlow{
+
+    from{
+
+        filter:brightness(1);
+
+    }
+
+    to{
+
+        filter:brightness(1.3);
+
+    }
+
+}
+
+/*=========================
+    LINKS
+=========================*/
+
+.login-link a:hover{
+
+    color:#67E8F9;
+
+}
+
+.options a:hover{
+
+    color:#67E8F9;
+
+}
+
+/*=========================
+    SCROLLBAR
+=========================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563EB;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#09111F;
+
+}
+
+/*=========================
+    TEXT SELECTION
+=========================*/
+
+::selection{
+
+    background:#2563EB;
+
+    color:white;
+
+}
+/*==================================================
+    PART 4 - RESPONSIVE + FINAL POLISH
+==================================================*/
+
+/*=========================
+    DESKTOP
+=========================*/
+
+@media(max-width:1200px){
+
+    .wrapper{
+
+        max-width:1100px;
+
+        grid-template-columns:1fr 430px;
+
+        gap:50px;
+
+        padding:30px;
+
+    }
+
+    .left-panel h2{
+
+        font-size:38px;
+
+    }
+
+    .brand h1{
+
+        font-size:42px;
+
+    }
+
+}
+
+/*=========================
+    TABLET
+=========================*/
+
+@media(max-width:992px){
+
+    body{
+
+        overflow:auto;
+
+    }
+
+    .wrapper{
+
+        grid-template-columns:1fr;
+
+        justify-items:center;
+
+        gap:40px;
+
+        padding:30px 20px;
+
+    }
+
+    .left-panel{
+
+        display:none;
+
+    }
+
+    .right-panel{
+
+        width:100%;
+
+    }
+
+    .signup-card{
+
+        width:100%;
+
+        max-width:460px;
+
+    }
+
+}
+
+/*=========================
+    MOBILE
+=========================*/
+
+@media(max-width:768px){
+
+    .wrapper{
+
+        padding:20px;
+
+    }
+
+    .signup-card{
+
+        padding:28px;
+
+        border-radius:24px;
+
+    }
+
+    .signup-card h2{
+
+        font-size:28px;
+
+    }
+
+    .signup-card>p{
+
+        font-size:14px;
+
+    }
+
+    .input{
+
+        padding:13px 15px;
+
+    }
+
+    .signup-btn{
+
+        padding:14px;
+
+    }
+
+    .google-btn{
+
+        padding:14px;
+
+    }
+
+}
+
+/*=========================
+    SMALL MOBILE
+=========================*/
+
+@media(max-width:480px){
+
+    .wrapper{
+
+        padding:15px;
+
+    }
+
+    .signup-card{
+
+        padding:22px;
+
+        border-radius:20px;
+
+    }
+
+    .signup-card h2{
+
+        font-size:24px;
+
+    }
+
+    .input input{
+
+        font-size:14px;
+
+    }
+
+    .brand h1{
+
+        font-size:34px;
+
+    }
+
+}
+
+/*=========================
+    BUTTON ACTIVE
+=========================*/
+
+.signup-btn:active{
+
+    transform:scale(.98);
+
+}
+
+.google-btn:active{
+
+    transform:scale(.98);
+
+}
+
+/*=========================
+    PAGE FADE
+=========================*/
+
+body{
+
+    animation:pageFade .6s ease;
+
+}
+
+@keyframes pageFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/*=========================
+    CARD SHADOW
+=========================*/
+
+.signup-card:hover{
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.55),
+        0 0 30px rgba(56,189,248,.10);
+
+}
+
+/*=========================
+    SMOOTH TRANSITION
+=========================*/
+
+.signup-btn,
+.google-btn,
+.input,
+.feature,
+.login-link a{
+
+    transition:.3s ease;
+
+}
+.strength-fill{
+
+    width:0;
+
+    height:100%;
+
+    background:#EF4444;
+
+    border-radius:20px;
+
+    transition:.4s;
+
+}

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KvonAuth | Sign Up</title>
+
+    <link rel="stylesheet" href="css/signup.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Background -->
+
+    <div class="background">
+
+        <div class="blur blur1"></div>
+        <div class="blur blur2"></div>
+
+    </div>
+
+    <!-- Mouse Glow -->
+
+    <div class="cursor-glow"></div>
+
+    <!-- Wrapper -->
+
+    <main class="wrapper">
+
+        <!-- Left Panel -->
+
+        <section class="left-panel">
+
+            <div class="brand">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <h1>KvonAuth</h1>
+
+            </div>
+
+            <h2>Create Your Account</h2>
+
+            <p>
+
+                Join KvonAuth and experience secure authentication
+                powered by Node.js, Express and MongoDB.
+
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Secure Registration
+                </div>
+
+                <div class="feature">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Password Encryption
+                </div>
+
+                <div class="feature">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Fast Authentication
+                </div>
+
+                <div class="feature">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Cloud Ready
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Right Panel -->
+
+        <section class="right-panel">
+
+            <div class="signup-card">
+
+                <h2>Create Account 🚀</h2>
+
+                <p>
+                    Register to continue
+                </p>
+
+                <!-- Name -->
+
+                <div class="input-box">
+
+                    <label>Full Name</label>
+
+                    <div class="input">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your full name">
+
+                    </div>
+
+                </div>
+
+                <!-- Email -->
+
+                <div class="input-box">
+
+                    <label>Email</label>
+
+                    <div class="input">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email">
+
+                    </div>
+
+                </div>
+
+                <!-- Password -->
+
+                <div class="input-box">
+
+                    <label>Password</label>
+
+                    <div class="input">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Create password">
+
+                        <i class="fa-solid fa-eye toggle-password"></i>
+
+                    </div>
+
+                </div>
+
+                <!-- Confirm Password -->
+
+                <div class="input-box">
+
+                    <label>Confirm Password</label>
+
+                    <div class="input">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm password">
+
+                    </div>
+
+                </div>
+
+                <!-- Password Strength -->
+
+                <div class="strength">
+
+    <div class="strength-bar">
+
+        <div class="strength-fill"></div>
+
+    </div>
+
+    <span id="strengthText">
+
+        Password Strength
+
+    </span>
+
+</div>
+
+                <!-- Button -->
+
+                <button
+                    class="signup-btn"
+                    onclick="signup()">
+
+                    Create Account
+
+                </button>
+
+                <div class="divider">
+
+                    <span>OR</span>
+
+                </div>
+
+                <button class="google-btn">
+
+                    <i class="fa-brands fa-google"></i>
+
+                    Continue with Google
+
+                </button>
+
+                <div class="login-link">
+
+                    Already have an account?
+
+                    <a href="login.html">
+
+                        Login
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/signup.js"></script>
+
+</body>
+
+</html>
